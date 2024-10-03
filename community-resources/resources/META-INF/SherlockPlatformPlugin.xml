@@ -1,0 +1,33 @@
+<idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- TODO: can the Java plugin be excluded somehow? -->
+  <xi:include href="/META-INF/JavaIdePlugin.xml" xpointer="xpointer(/idea-plugin/*)"/>
+
+  <!--
+      IntelliJ 2024.2 [BEGIN]
+
+      Starting IntelliJ 2024.2, SettingsController and its extension point must be registered
+      because this file is missing:
+
+        <xi:include href="/META-INF/essential-modules.xml"/>
+
+      Both IdeaPlugin.xml and AndroidStudioPlugin.xml include essential-modules.xml transitively via:
+
+        <xi:include href="/META-INF/common-ide-modules.xml"/>
+
+      Including either one results in this error:
+
+        Product module intellij.platform.settings.local descriptor content
+        is not embedded - corrupted distribution...
+
+      This could be due to conflict with "essential-modules.xml" and
+      "common-ide-modules.xml".
+  -->
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationService serviceInterface="com.intellij.platform.settings.SettingsController" serviceImplementation="com.intellij.platform.settings.local.SettingsControllerMediator" />
+  </extensions>
+
+  <extensionPoints>
+    <extensionPoint name="settingsController" interface="com.intellij.platform.settings.DelegatedSettingsController" />
+  </extensionPoints>
+  <!-- IntelliJ 2024.2 [END] -->
+</idea-plugin>
