@@ -9,6 +9,17 @@
       because this file is missing:
 
         <xi:include href="/META-INF/essential-modules.xml"/>
+
+      IdeaPlugin.xml includes essential-modules.xml transitively via:
+
+        <xi:include href="/META-INF/common-ide-modules.xml"/>
+
+      Including either essential-modules.xml or common-ide-modules.xml results in this error:
+
+        Product module intellij.platform.settings.local descriptor content
+        is not embedded - corrupted distribution...
+
+      This could be due to conflict with "essential-modules.xml" and "common-ide-modules.xml"
   -->
   <extensions defaultExtensionNs="com.intellij">
     <applicationService serviceInterface="com.intellij.platform.settings.SettingsController" serviceImplementation="com.intellij.platform.settings.local.SettingsControllerMediator" />
