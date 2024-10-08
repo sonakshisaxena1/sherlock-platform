@@ -2,4 +2,5 @@
   <!-- TODO: can the Java plugin be excluded somehow? -->
   <xi:include href="/META-INF/JavaIdePlugin.xml" xpointer="xpointer(/idea-plugin/*)"/>
   <xi:include href="/META-INF/essential-modules.xml"/>
+
 </idea-plugin>
