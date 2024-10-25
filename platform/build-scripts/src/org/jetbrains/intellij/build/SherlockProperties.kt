@@ -24,13 +24,13 @@ import kotlinx.collections.immutable.persistentListOf
 class SherlockProperties(home: Path) : BaseIdeaProperties() {
     init {
       platformPrefix = "SherlockPlatform"
-      applicationInfoModule = "intellij.idea.community.customization" // TODO: better to use own module.
+      applicationInfoModule = "com.google.sherlock.branding"
       useSplash = true
       productLayout.buildAllCompatiblePlugins = false
       productLayout.prepareCustomPluginRepositoryForPublishedPlugins = false
       productLayout.productImplementationModules = listOf(
         "intellij.platform.starter",
-        "intellij.idea.community.customization",
+        "com.google.sherlock.branding",
       )
       // TODO: Bundle plugin here
       productLayout.bundledPluginModules = mutableListOf()
