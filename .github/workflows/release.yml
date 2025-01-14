@@ -24,6 +24,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            sherlock-platform-artifacts/*
+            sherlock-platform-*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
