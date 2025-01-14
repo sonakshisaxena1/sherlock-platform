@@ -12,7 +12,8 @@ jobs:
   release:
     needs: build-platform
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
       - name: Download Artifacts from Build Workflow
         uses: actions/download-artifact@v3
