@@ -1,4 +1,4 @@
-/***
+/*
  * Copyright 2024 Google LLC
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11,18 +11,24 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- ***/
+ */
+package com.google.sherlock.newProject.ui;
 
-package com.google.sherlock.onboarding;
+import com.google.sherlock.newProject.steps.SherlockNewProjectStep;
+import com.intellij.ide.util.projectWizard.AbstractNewProjectDialog;
 
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import org.jetbrains.annotations.NotNull;
-
-//This is placeholder, more like an exploration and will be updated based on the UI design for onboarding
-public class NewProjectStep extends AnAction {
+/**
+ * The dialog for creating a new Sherlock project.
+ * This dialog guides the user through the steps of setting up a new project.
+ */
+public class SherlockNewProjectDialog extends AbstractNewProjectDialog {
   @Override
-  public void actionPerformed(@NotNull AnActionEvent e) {
+  protected SherlockNewProjectStep createRootStep() {
+    return new SherlockNewProjectStep();
+  }
 
+  @Override
+  protected String getHelpId() {
+    return "concepts.project";
   }
 }
