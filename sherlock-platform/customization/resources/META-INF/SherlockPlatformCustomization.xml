@@ -31,5 +31,12 @@
 
         <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
       </group>
+
+      <group id="RandomProjectGroup">
+        <reference ref="NewProjectOrModuleGroup"/>
+        <!--<action id="NewElement" class="com.intellij.ide.actions.NewElementAction"/>-->
+        <add-to-group group-id="FileOpenGroup" anchor="first"/>
+      </group>
+
     </actions>
 </idea-plugin>
