@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 # This script clones the Jetbrains/android repository. Note that the tag
 # of the android repo must match the tag of the IntelliJ repo, otherwise
 # there can be build errors.
