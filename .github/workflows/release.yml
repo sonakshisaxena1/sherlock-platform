@@ -4,6 +4,19 @@ on:
   release:
     types: [created, edited, published, prereleased, released]
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Release tag (e.g., v1.0.0, v1.2, v1.2.3-dev)'
+        required: true
+      prerelease:
+        description: 'Is this a prerelease?'
+        required: true
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
 
 jobs:
   build-platform:
@@ -15,15 +28,45 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Download Artifacts from Build Workflow
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download Linux Artifact
         uses: actions/download-artifact@v4
         with:
-          path: sherlock-platform-artifacts
+          name: sherlock-platform-linux
+          path: artifacts-download
+
+      - name: Download Mac Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: sherlock-platform-mac
+          path: artifacts-download
+
+      - name: Download Windows Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: sherlock-platform-win
+          path: artifacts-download
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+            python-version: '3.x'
+
+      - name: Run version update script
+        run: |
+          python update_version.py artifacts-download --release-tag "${{ github.event.release.tag_name || inputs.release_tag }}" --prerelease "${{ github.event.release.prerelease || inputs.prerelease }}"
+        shell: bash
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          tag_name: ${{ github.event.release.tag_name || inputs.release_tag }}
+          prerelease: ${{ github.event.release.prerelease || inputs.prerelease }}
           files: |
-            sherlock-platform-artifacts/*/*
+            artifacts-download/sherlock-platform.win.zip
+            artifacts-download/sherlock-platform.tar.gz
+            artifacts-download/sherlock-platform.mac.aarch64.zip
