@@ -24,6 +24,7 @@ import java.util.Set;
  * If you need to customize behavior of a plugin depending on the IDE it's installed, it's better to use optional dependency on a corresponding
  * plugin or IDE module. See <a href="https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html#modules">SDK Docs</a>.
  * </p>
+ *
  * @author Konstantin Bulenkov, Nikolay Chashnikov
  */
 @ApiStatus.Internal
@@ -51,6 +52,7 @@ public final class PlatformUtils {
   public static final String FLEET_PREFIX = "FleetBackend";
   public static final String RUSTROVER_PREFIX = "RustRover";
   public static final String WRITERSIDE_PREFIX = "Writerside";
+  public static final String SHERLOCK_PREFIX = "SherlockPlatform";
 
   /**
    * @deprecated Code With Me Guest is an old name for JetBrains Client
@@ -215,6 +217,9 @@ public final class PlatformUtils {
   public static boolean isQodana() {
     return SystemProperties.getBooleanProperty("qodana.application", false);
   }
+
+  // Sherlock: Required to ensure compatibility of plugin features amongst all IDEs
+  public static boolean isSherlockPlatform() { return System.getProperty(PLATFORM_PREFIX_KEY, "").equals(SHERLOCK_PREFIX); }
 
   private static boolean is(String idePrefix) {
     return idePrefix.equals(getPlatformPrefix());
