@@ -266,6 +266,7 @@ private class CustomizeTab(val parentDisposable: Disposable) : DefaultWelcomeScr
       LanguageAndRegionUi.createContent(this, propertyGraph, parentDisposable, lafConnection, EventSource.WELCOME_SCREEN)
       **/
 
+      /** Sherlock: Remove Accessibility Support
       header(IdeBundle.message("title.accessibility"))
 
       row(IdeBundle.message("welcome.screen.ide.font.size.label")) {
@@ -273,6 +274,7 @@ private class CustomizeTab(val parentDisposable: Disposable) : DefaultWelcomeScr
       }.bottomGap(BottomGap.SMALL)
 
       createColorBlindnessSettingBlock()
+      **/
 
       header(KeyMapBundle.message("keymap.display.name"))
       row {
