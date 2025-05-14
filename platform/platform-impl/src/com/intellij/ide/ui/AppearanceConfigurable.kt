@@ -175,6 +175,7 @@ internal class AppearanceConfigurable : BoundSearchableConfigurable(message("tit
       val autodetectSupportedPredicate = ComponentPredicate.fromValue(lafManager.autodetectSupported)
       val syncThemeAndEditorSchemePredicate = autodetectSupportedPredicate.and(ComponentPredicate.fromObservableProperty(syncThemeProperty, disposable))
 
+      /** Sherlock: Remove theme and color from appearance in settings
       panel {
         row(message("combobox.look.and.feel")) {
           val lafComboBoxModelWrapper = LafComboBoxModelWrapper { lafManager.lafComboBoxModel }
@@ -228,6 +229,7 @@ internal class AppearanceConfigurable : BoundSearchableConfigurable(message("tit
           colorAndFontsOptions.disposeUIResources()
         }
       }
+      **/
 
       /** Sherlock: Remove Accessibility support
       group(message("title.accessibility")) {
