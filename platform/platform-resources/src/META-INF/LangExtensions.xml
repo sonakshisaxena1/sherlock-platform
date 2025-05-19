@@ -1061,10 +1061,12 @@
     -->
     <actionPromoter implementation="com.intellij.ide.bookmark.actions.NodeMoveActionPromoter"/>
 
+    <!--Sherlock: Remove TODO tool window
     <toolWindow id="TODO" anchor="bottom" icon="AllIcons.Toolwindows.ToolWindowTodo"
                 factoryClass="com.intellij.ide.todo.TodoToolWindowFactory" canCloseContents="true"/>
     <toolWindowExtractorMode id="TODO" mode="per_client"/>
     <projectService serviceImplementation="com.intellij.ide.todo.TodoViewChangesSupport"/>
+    -->
 
     <psi.fileReferenceHelper implementation="com.intellij.psi.impl.source.resolve.reference.impl.providers.PsiFileReferenceHelper"/>
     <psi.fileReferenceHelper implementation="com.intellij.psi.impl.source.resolve.reference.impl.providers.JarFileReferenceHelper"/>
