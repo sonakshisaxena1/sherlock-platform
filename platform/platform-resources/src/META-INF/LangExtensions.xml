@@ -584,9 +584,11 @@
                          key="title.file.templates" bundle="messages.IdeBundle"/>
 
     <!-- T.O.D.O -->
+    <!--Sherlock: Remove TODO from Keymap under Editor in Settings
     <applicationConfigurable groupId="editor" instance="com.intellij.ide.todo.configurable.TodoConfigurable" id="preferences.toDoOptions"
                              key="title.todo"
                              bundle="messages.IdeBundle"/>
+    -->
 
     <!-- External Tools -->
     <applicationConfigurable groupId="tools" groupWeight="140" instance="com.intellij.tools.ToolConfigurable" id="preferences.externalTools"
