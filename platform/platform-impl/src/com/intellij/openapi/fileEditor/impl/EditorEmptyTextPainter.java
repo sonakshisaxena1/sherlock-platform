@@ -51,16 +51,25 @@ public class EditorEmptyTextPainter {
   }
 
   protected void advertiseActions(@NotNull JComponent splitters, @NotNull UIUtil.TextPainter painter) {
+    // Sherlock: Advertise new capture functionality
+    appendNewCapture(painter);
+    /* Sherlock: These functionalities are irrelevant for our tool.
     appendSearchEverywhere(painter);
     appendToolWindow(painter, IdeBundle.message("empty.text.project.view"), ToolWindowId.PROJECT_VIEW, splitters);
     appendAction(painter, IdeBundle.message("empty.text.go.to.file"), getActionShortcutText("GotoFile"));
     appendAction(painter, IdeBundle.message("empty.text.recent.files"), getActionShortcutText(IdeActions.ACTION_RECENT_FILES));
     appendAction(painter, IdeBundle.message("empty.text.navigation.bar"), getActionShortcutText("ShowNavBar"));
     appendDnd(painter);
+    */
   }
 
   protected void appendDnd(@NotNull UIUtil.TextPainter painter) {
     appendLine(painter, IdeBundle.message("empty.text.drop.files.to.open"));
+  }
+
+  // Sherlock: Advertise new capture functionality on empty project page.
+  protected void appendNewCapture(@NotNull UIUtil.TextPainter painter) {
+    appendLine(painter, IdeBundle.message("empty.text.new.capture"));
   }
 
   protected void appendSearchEverywhere(@NotNull UIUtil.TextPainter painter) {
