@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/sherlock-branding/com.google.sherlock.branding.iml" filepath="$PROJECT_DIR$/sherlock-branding/com.google.sherlock.branding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sherlock-platform/customization/com.google.sherlock.customization.iml" filepath="$PROJECT_DIR$/sherlock-platform/customization/com.google.sherlock.customization.iml" />
       <module fileurl="file://$PROJECT_DIR$/fleet/andel/fleet.andel.iml" filepath="$PROJECT_DIR$/fleet/andel/fleet.andel.iml" />
       <module fileurl="file://$PROJECT_DIR$/fleet/compiler-plugins/fleet.compiler.plugins.iml" filepath="$PROJECT_DIR$/fleet/compiler-plugins/fleet.compiler.plugins.iml" />
       <module fileurl="file://$PROJECT_DIR$/fleet/fastutil/fleet.fastutil.iml" filepath="$PROJECT_DIR$/fleet/fastutil/fleet.fastutil.iml" />
