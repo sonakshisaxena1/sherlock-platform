@@ -370,6 +370,9 @@ public final class ConsentOptions implements ModificationTracker {
   private @Nullable Consent getDefaultConsent(String consentId) {
     Map<String, Map<Locale, Consent>> defaultConsents = loadDefaultConsents();
     Map<Locale, Consent> consentMap = defaultConsents.get(consentId);
+    /* Sherlock:  handle null map */
+    if (consentMap == null) return null;
+    /* Sherlock:  handle null map */
     Consent defaultConsent = consentMap.get(getDefaultLocale());
     if (defaultConsent == null) return null;
     Consent localizedConsent = consentMap.get(getCurrentLocale());
