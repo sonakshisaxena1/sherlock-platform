@@ -33,7 +33,7 @@ class SherlockProperties(home: Path) : BaseIdeaProperties() {
         "intellij.idea.community.customization",
       )
       // TODO: Bundle plugin here
-      productLayout.bundledPluginModules = mutableListOf()
+      productLayout.bundledPluginModules = persistentListOf()
       productLayout.pluginLayouts = persistentListOf()
     }
 
