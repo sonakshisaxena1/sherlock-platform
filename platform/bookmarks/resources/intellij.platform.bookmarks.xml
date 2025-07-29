@@ -205,7 +205,9 @@
       <reference ref="ShowTypeBookmarks"/>
       <separator/>
 
+      <!--Sherlock: Remove Bookmarks from Edit Menu
       <add-to-group group-id="EditMenu" anchor="after" relative-to-action="Macros"/>
+      -->
     </group>
 
     <reference ref="ToggleBookmark">
