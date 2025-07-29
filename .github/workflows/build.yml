@@ -34,8 +34,14 @@ jobs:
       - name: Set JAVA_HOME
         run: echo "JAVA_HOME=$JAVA_HOME" >> $GITHUB_ENV
 
+      - name: Grant execute permission to getPlugins.sh script
+        run: chmod +x ./getPlugins.sh
+
       - name: Grant execute permission to build script
         run: chmod +x ./build_sherlock_platform.sh
+
+      - name: Download Android artifacts
+        run: ./getPlugins.sh --shallow
 
       - name: Build Sherlock Platform
         run: ./build_sherlock_platform.sh
