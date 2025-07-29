@@ -670,6 +670,7 @@ suspend fun layoutPlatformDistribution(
       launch(CoroutineName("patch keymap with Alt click reassigned to multiple carets")) {
         patchKeyMapWithAltClickReassignedToMultipleCarets(moduleOutputPatcher, context)
       }
+      /* Sherlock: ApplicationNamesInfo shouldn't be patched to enable version modifications later.
       launch(CoroutineName("write patched app info")) {
         spanBuilder("write patched app info").use {
           val moduleName = "intellij.platform.core"
@@ -679,6 +680,7 @@ suspend fun layoutPlatformDistribution(
           moduleOutputPatcher.patchModuleOutput(moduleName, relativePath, result)
         }
       }
+      */
     }
   }
 
@@ -1227,7 +1229,7 @@ suspend fun createIdeClassPath(platformLayout: PlatformLayout, context: BuildCon
   for (entry in contentReport.bundledPlugins.flatMap { it.second }) {
     val relativePath = pluginDir.relativize(entry.path)
     // for plugins, our classloaders load JARs only from the "lib/" and "lib/modules/" directories
-    if (!(relativePath.nameCount in 3..4 && relativePath.getName(1).toString() == LIB_DIRECTORY && 
+    if (!(relativePath.nameCount in 3..4 && relativePath.getName(1).toString() == LIB_DIRECTORY &&
           (relativePath.nameCount == 3 || relativePath.getName(2).toString() == "modules"))) {
       continue
     }
