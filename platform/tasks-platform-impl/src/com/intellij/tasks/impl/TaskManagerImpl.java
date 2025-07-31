@@ -677,28 +677,32 @@ public final class TaskManagerImpl extends TaskManager implements PersistentStat
       }
     }
 
-    // make sure the task is associated with default changelist
-    LocalTask defaultTask = findTask(LocalTaskImpl.DEFAULT_TASK_ID);
-    ChangeListManager changeListManager = ChangeListManager.getInstance(myProject);
-    LocalChangeList defaultList = changeListManager.findChangeList(LocalChangeList.getDefaultName());
-    if (defaultList != null && defaultTask != null) {
-      ChangeListInfo listInfo = new ChangeListInfo(defaultList);
-      if (!defaultTask.getChangeLists().contains(listInfo)) {
-        defaultTask.addChangelist(listInfo);
-      }
-    }
-
-    // remove already not existing changelists from tasks changelists
-    for (LocalTask localTask : getLocalTasks()) {
-      for (Iterator<ChangeListInfo> iterator = localTask.getChangeLists().iterator(); iterator.hasNext(); ) {
-        final ChangeListInfo changeListInfo = iterator.next();
-        if (changeListManager.getChangeList(changeListInfo.id) == null) {
-          iterator.remove();
+    /* Sherlock: Run VCS related section only if VCS is enabled. */
+    if (isVcsEnabled()) {
+      // make sure the task is associated with default changelist
+      LocalTask defaultTask = findTask(LocalTaskImpl.DEFAULT_TASK_ID);
+      ChangeListManager changeListManager = ChangeListManager.getInstance(myProject);
+      LocalChangeList defaultList = changeListManager.findChangeList(LocalChangeList.getDefaultName());
+      if (defaultList != null && defaultTask != null) {
+        ChangeListInfo listInfo = new ChangeListInfo(defaultList);
+        if (!defaultTask.getChangeLists().contains(listInfo)) {
+          defaultTask.addChangelist(listInfo);
         }
       }
-    }
 
-    changeListManager.addChangeListListener(myChangeListListener, myProject);
+      // remove already not existing changelists from tasks changelists
+      for (LocalTask localTask : getLocalTasks()) {
+        for (Iterator<ChangeListInfo> iterator = localTask.getChangeLists().iterator(); iterator.hasNext(); ) {
+          final ChangeListInfo changeListInfo = iterator.next();
+          if (changeListManager.getChangeList(changeListInfo.id) == null) {
+            iterator.remove();
+          }
+        }
+      }
+
+      changeListManager.addChangeListListener(myChangeListListener, myProject);
+    }
+    /* Sherlock: Run VCS related section only if VCS is enabled. */
 
     if (!ApplicationManager.getApplication().isUnitTestMode()) {
       ProjectUtilKt.executeOnPooledThread(myProject, () -> {
@@ -880,7 +884,10 @@ public final class TaskManagerImpl extends TaskManager implements PersistentStat
 
   @Override
   public boolean isVcsEnabled() {
-    return ProjectLevelVcsManager.getInstance(myProject).getAllActiveVcss().length > 0;
+    /* Sherlock: Return false if VCS manager is not found. */
+    ProjectLevelVcsManager instance = ProjectLevelVcsManager.getInstance(myProject);
+    return instance != null && instance.getAllActiveVcss().length > 0;
+    /* Sherlock: Return false if VCS manager is not found. */
   }
 
   @Override
