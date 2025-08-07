@@ -1,0 +1,35 @@
+<idea-plugin package="org.jetbrains.kotlin" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <id>org.jetbrains.kotlin</id>
+  <name>Kotlin</name>
+  <category>Languages</category>
+  <description><![CDATA[
+    Provides language support for Kotlin, a modern programming language designed to make developers happier.
+    <br><br>
+    <a href="https://kotlinlang.org/docs/tutorials/getting-started.html">Getting Started</a><br>
+    <a href="https://slack.kotlinlang.org/">Public Slack</a><br>
+    <a href="https://youtrack.jetbrains.com/issues/KTIJ">Issue tracker</a><br>
+  ]]></description>
+  <!--suppress PluginXmlValidity -->
+  <version>@snapshot@</version>
+
+  <!--suppress PluginXmlValidity -->
+  <vendor url="https://www.jetbrains.com">JetBrains</vendor>
+
+  <dependencies>
+    <!-- IJ/AS-DEPENDENCY-PLACEHOLDER -->
+    <plugin id="com.intellij.java"/>
+    <module name="intellij.platform.collaborationTools"/>
+  </dependencies>
+
+  <extensionPoints>
+    <extensionPoint name="supportsKotlinPluginMode" dynamic="true"
+                    beanClass="org.jetbrains.kotlin.idea.base.plugin.SupportsKotlinPluginMode">
+    </extensionPoint>
+  </extensionPoints>
+
+
+  <!-- IJ/AS-INCOMPATIBLE-PLACEHOLDER -->
+
+  <xi:include href="kotlin.plugin.k1.xml" includeUnless="idea.kotlin.plugin.use.k2"/>
+  <xi:include href="kotlin.plugin.k2.xml" includeIf="idea.kotlin.plugin.use.k2"/>
+</idea-plugin>

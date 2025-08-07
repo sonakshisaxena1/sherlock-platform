@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="kotlin-test-junit" type="repository">
+    <properties maven-id="org.jetbrains.kotlin:kotlin-test-junit:2.1.10">
+      <verification>
+        <artifact url="file://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit/2.1.10/kotlin-test-junit-2.1.10.jar">
+          <sha256sum>1bc2f4e0bad73a2d04bcc67f46ab63fb10cc8e288f77f94b5e5dc07361ef30be</sha256sum>
+        </artifact>
+      </verification>
+      <exclude>
+        <dependency maven-id="org.jetbrains.kotlin:kotlin-test" />
+        <dependency maven-id="junit:junit" />
+      </exclude>
+    </properties>
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit/2.1.10/kotlin-test-junit-2.1.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/kotlin/kotlin-test-junit/2.1.10/kotlin-test-junit-2.1.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

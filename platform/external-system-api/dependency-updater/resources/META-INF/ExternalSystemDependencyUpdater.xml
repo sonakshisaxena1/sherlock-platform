@@ -1,0 +1,6 @@
+<idea-plugin>
+  <extensions defaultExtensionNs="com.intellij"/>
+  <extensionPoints>
+    <extensionPoint qualifiedName="com.intellij.externalSystem.dependencyModifier" dynamic="true" interface="com.intellij.externalSystem.ExternalDependencyModificator" area="IDEA_PROJECT"/>
+  </extensionPoints>
+</idea-plugin>
