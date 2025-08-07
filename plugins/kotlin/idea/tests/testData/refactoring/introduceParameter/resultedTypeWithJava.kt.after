@@ -1,3 +1,0 @@
-private fun bar(s: String = ActionToolbar.foo) {
-    val b = Tester(s)
-}

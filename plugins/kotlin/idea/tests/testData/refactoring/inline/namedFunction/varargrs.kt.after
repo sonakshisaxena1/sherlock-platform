@@ -1,5 +1,0 @@
-fun newFun(p1: String, vararg p2: Int) {}
-
-fun foo() {
-    newFun("a")
-}

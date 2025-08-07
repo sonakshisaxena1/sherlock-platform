@@ -1,8 +1,0 @@
-// WITH_STDLIB
-// RUNTIME_WITH_FULL_JDK
-import java.time.LocalDate
-
-fun test(target: LocalDate, from: LocalDate) {
-    val to = from.plusDays(1)
-    <caret>from <= target && target <= to
-}

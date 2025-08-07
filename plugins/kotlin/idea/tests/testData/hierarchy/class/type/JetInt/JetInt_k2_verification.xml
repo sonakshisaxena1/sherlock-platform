@@ -1,5 +1,0 @@
-<node text="Any (kotlin)">
-  <node text="Number (kotlin)">
-    <node text="Int (kotlin)" base="true"/>
-  </node>
-</node>

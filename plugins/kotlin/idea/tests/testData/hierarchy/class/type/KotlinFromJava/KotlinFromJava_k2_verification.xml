@@ -1,5 +1,0 @@
-<node text="Any (kotlin)">
-  <node text="JavaClass ()">
-    <node text="MyClass ()" base="true"/>
-  </node>
-</node>

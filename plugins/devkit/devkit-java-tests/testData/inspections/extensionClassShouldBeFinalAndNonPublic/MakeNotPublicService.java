@@ -1,1 +1,0 @@
-public class <warning descr="Extension class should be final"><warning descr="Service implementation should not be public. If a service is supposed to be used outside its module, extract an interface from it and specify it as serviceInterface in plugin.xml.">MakeNotPublicService<caret></warning></warning> {}

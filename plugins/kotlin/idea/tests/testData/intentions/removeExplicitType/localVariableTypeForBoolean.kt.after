@@ -1,4 +1,0 @@
-fun foo(z: Long): Boolean {
-    val x = z == 1L
-    return x
-}

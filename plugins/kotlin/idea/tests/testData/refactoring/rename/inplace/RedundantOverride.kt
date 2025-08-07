@@ -1,5 +1,0 @@
-// NEW_NAME: y
-// RENAME: member
-class A {
-    override fun <caret>x() {}
-}

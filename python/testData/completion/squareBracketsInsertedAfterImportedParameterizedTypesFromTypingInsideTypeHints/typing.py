@@ -1,3 +1,0 @@
-@_SpecialForm
-def ClassVar(self, parameters):
-    ...

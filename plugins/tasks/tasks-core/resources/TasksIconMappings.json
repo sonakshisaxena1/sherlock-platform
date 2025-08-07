@@ -1,9 +1,0 @@
-{
-  "icons": {
-    "expui": {
-      "startTimer.svg": "icons/startTimer.svg",
-      "stopTimer.svg": "icons/stopTimer.svg",
-      "toolWindowTimer.svg": "icons/clock.svg"
-    }
-  }
-}

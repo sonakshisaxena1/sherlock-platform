@@ -1,2 +1,0 @@
-class UniqueBox[T]:
-    pass

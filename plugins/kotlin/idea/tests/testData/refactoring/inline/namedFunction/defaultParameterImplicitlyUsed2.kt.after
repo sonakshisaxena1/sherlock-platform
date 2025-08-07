@@ -1,5 +1,0 @@
-fun newFun(x: String, y: Int = x.length, z: String? = "a") {}
-
-fun foo() {
-    newFun("a")
-}

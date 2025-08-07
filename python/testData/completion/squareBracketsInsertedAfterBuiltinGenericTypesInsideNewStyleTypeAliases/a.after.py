@@ -1,1 +1,0 @@
-type Alias = list[<caret>]

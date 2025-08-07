@@ -1,8 +1,0 @@
-interface I {
-
-    fun newFun(option1: String = "", option2: Int = 0, option3: Int = -1, option4: String? = "x")
-}
-
-fun foo(i: I) {
-    i.newFun(option2 = 1, option4 = null)
-}

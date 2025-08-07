@@ -1,6 +1,0 @@
-class FooImpl : Foo {
-    override val obj: Type
-        get() = Type("0")
-
-    override fun getValue() = "0"
-}

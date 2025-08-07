@@ -1,4 +1,0 @@
-// WITH_STDLIB
-class X {
-    val i = 'c'.code
-}

@@ -1,2 +1,0 @@
-Value read 7 return this.width - other.width
-Value read 7 return this.width - other.width
