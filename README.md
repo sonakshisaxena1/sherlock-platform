@@ -3,7 +3,7 @@
 ## About
 
 This is the customized IntelliJ platform for Sherlock Project based
-off the IntelliJ Platform Version 2024.2. To read more on the IntelliJ Platform documentation scroll down to the IntelliJ IDEA Community
+off the IntelliJ Platform Version 2025.1.2. To read more on the IntelliJ Platform documentation scroll down to the IntelliJ IDEA Community
 Edition section.
 
 ## Download Instructions
@@ -34,7 +34,7 @@ The following steps build Sherlock Platform only on Linux and Mac:
 * Run `chmod +x ./build_sherlock_platform.sh` from the root of the directory to grant access.
 * Run `./build_sherlock_platform.sh` to build the platform.
 * Extract the artifact from `out/sherlock-platform/artifacts` according to the OS.
-* Run the platform from `out/sherlock-platform/artifacts/sherlock-platform-242.21829/Sherlock\ Platform-2024.2.1/bin/`
+* Run the platform from `out/sherlock-platform/artifacts/sherlock-platform/Sherlock\ Platform-2025.1.2/bin/`
 
 ## Creating a New Release for Sherlock Platform
 
