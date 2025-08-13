@@ -9,5 +9,6 @@
     <orderEntry type="module" module-name="intellij.platform.monolith.main" />
     <orderEntry type="module" module-name="intellij.java.ide.resources" />
     <orderEntry type="module" module-name="com.google.sherlock.branding" />
+    <orderEntry type="module" module-name="intellij.performanceTesting" />
   </component>
 </module>

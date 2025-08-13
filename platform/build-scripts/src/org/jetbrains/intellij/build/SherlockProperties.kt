@@ -17,6 +17,7 @@ package org.jetbrains.intellij.build
 
 import java.nio.file.Path
 import kotlinx.collections.immutable.persistentListOf
+import org.jetbrains.intellij.build.CommunityRepositoryModules.COMMUNITY_REPOSITORY_PLUGINS
 
 /**
  * Configures the Sherlock distribution by specifying bundled plugins, JVM args, extra files, and more.
@@ -34,8 +35,13 @@ class SherlockProperties(home: Path) : BaseIdeaProperties() {
       "intellij.platform.starter",
       "com.google.sherlock.branding",
     )
-    productLayout.bundledPluginModules = persistentListOf()
+    productLayout.bundledPluginModules = persistentListOf(
+      "intellij.performanceTesting"
+    )
     productLayout.pluginLayouts = persistentListOf()
+
+    val inheritedPluginLayouts = COMMUNITY_REPOSITORY_PLUGINS.removeAll { it.mainModule !in productLayout.bundledPluginModules }
+    productLayout.pluginLayouts = inheritedPluginLayouts
   }
 
   override val baseFileName: String = "sherlock"
